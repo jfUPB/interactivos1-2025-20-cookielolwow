@@ -12,7 +12,7 @@
 
 
 
-Actividad 02
+## Actividad 02
 
 
 ¿Qué es el diseño/arte generativo?
