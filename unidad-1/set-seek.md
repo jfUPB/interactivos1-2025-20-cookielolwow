@@ -32,9 +32,14 @@ En la Ingeniería en Diseño de Entretenimiento Digital, este enfoque puede apli
 ## Actividad 03
 
 
-### Es tu turno ahora de reproducir el ejemplo anterior. La idea es que te familiarices con las herramientas y puedas replicar el ejemplo. Luego de hacer el ejercicio, responde la siguiente pregunta:
+identifica los inputs, outputs y el proceso. 
 
-### En este sistemas físico interactivo identifica los inputs, outputs y el proceso. 
+### ◦ inputs
+
+
+### ◦ Outputs
+
+### ◦ Procesos
 
 
 
