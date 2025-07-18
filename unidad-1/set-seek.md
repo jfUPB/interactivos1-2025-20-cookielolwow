@@ -45,7 +45,7 @@ identifica los inputs, outputs y el proceso.
 
 
 ### ◦ Outputs
- ◦ Pantalla LED del micro:bit, que muestra:
+Pantalla LED del micro:bit, que muestra:
  
  ◦ Mariposa (inicio)
  
@@ -53,7 +53,7 @@ identifica los inputs, outputs y el proceso.
 
 
  
-◦ Círculo en la interfaz p5.js, que cambia de color:
+  Círculo en la interfaz p5.js, que cambia de color:
 ◦ Rojo si se presiona botón A
 
 ◦ Amarillo si se presiona botón B
