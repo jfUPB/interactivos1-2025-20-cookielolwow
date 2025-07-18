@@ -40,9 +40,5 @@ En la ingenieria de diseño de entretenimiento digital podemos aplicar los siste
 ### Crea tu propio programa en p5.js. En ti bitácora:
 
 ### 1. Escribe el enlace a tu programa en el editor de p5.js.
-
-
-### 2. Copia el código de tu programa en la bitácora (recuerda insertarlo usando markdown y el lenguaje javascript).
-
-
+### 2. Copia el código de tu programa en la bitácora (recuerda insertarlo usando markdown y el lenguaje javascript)
 ### 3. Muestra una captura de pantalla del resultado de tu programa.
