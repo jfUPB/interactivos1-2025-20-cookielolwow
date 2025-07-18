@@ -37,8 +37,11 @@ En la Ingeniería en Diseño de Entretenimiento Digital, este enfoque puede apli
 ### En este sistemas físico interactivo identifica los inputs, outputs y el proceso. 
 
 
-### Crea tu propio programa en p5.js. En ti bitácora:
 
-### 1. Escribe el enlace a tu programa en el editor de p5.js.
-### 2. Copia el código de tu programa en la bitácora (recuerda insertarlo usando markdown y el lenguaje javascript)
-### 3. Muestra una captura de pantalla del resultado de tu programa.
+
+## Actividad 04
+
+### Crea tu propio programa en p5.js. En tu bitácora:
+1. Escribe el enlace a tu programa en el editor de p5.js.
+2. Copia el código de tu programa en la bitácora (recuerda insertarlo usando markdown y el lenguaje javascript)
+3. Muestra una captura de pantalla del resultado de tu programa.
