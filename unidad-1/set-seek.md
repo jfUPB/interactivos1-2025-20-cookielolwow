@@ -51,6 +51,7 @@ identifica los inputs, outputs y el proceso.
  
  ◦ Corazón y cara feliz (cuando recibe 'h')
 
+
  
 ◦ Círculo en la interfaz p5.js, que cambia de color:
 ◦ Rojo si se presiona botón A
