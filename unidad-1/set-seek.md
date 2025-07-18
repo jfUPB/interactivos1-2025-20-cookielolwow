@@ -35,30 +35,23 @@ En la Ingeniería en Diseño de Entretenimiento Digital, este enfoque puede apli
 identifica los inputs, outputs y el proceso. 
 
 ### ◦ inputs
+◦ Puerto microUSB del microbit
+
+◦ Serial del computador
+
 ◦ Botón A del micro:bit
 
 ◦ Botón B del micro:bit
 
-◦ Movimiento (sacudir el micro:bit → acelerómetro)
-
-◦ Clic en el botón “Send Love” en la interfaz p5.js
+◦ Movimiento (sacudir el micro:bit)
 
 
 ### ◦ Outputs
-Pantalla LED del micro:bit, que muestra:
+
+◦ Microbit: Puerto microUSB
+
+◦Computador: Serial, Cable, Boton "Send love" y Pantalla
  
- ◦ Mariposa (inicio)
- 
- ◦ Corazón y cara feliz (cuando recibe 'h')
-
-
- 
-  Círculo en la interfaz p5.js, que cambia de color:
-◦ Rojo si se presiona botón A
-
-◦ Amarillo si se presiona botón B
-
-◦ Verde si se sacude el micro:bit
 
 ### ◦ Procesos
 
