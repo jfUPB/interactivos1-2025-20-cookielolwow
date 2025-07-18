@@ -22,7 +22,7 @@ En la ingenieria de diseño de entretenimiento digital podemos aplicar los siste
 
 
 ### ¿Qué es el diseño/arte generativo?
-
+Se refiere a cualquier practica artistica en la que se usa un sistema que tiene unas reglas añadidas que den variabilidad, se pone en marcha con cierto grado de autonomia, contribuyendo a una obra (de diseño y de arte) o dando como resultado la obra terminada.
 
 
 
