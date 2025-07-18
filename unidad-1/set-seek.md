@@ -28,3 +28,21 @@ En la ingenieria de diseño de entretenimiento digital podemos aplicar los siste
 
 
 ### ¿Cómo podrías aplicar lo que has visto en tu perfil profesional?
+
+
+## Actividad 03
+
+### Es tu turno ahora de reproducir el ejemplo anterior. La idea es que te familiarices con las herramientas y puedas replicar el ejemplo. Luego de hacer el ejercicio, responde la siguiente pregunta:
+
+### En este sistemas físico interactivo identifica los inputs, outputs y el proceso. 
+
+
+### Crea tu propio programa en p5.js. En ti bitácora:
+
+### 1. Escribe el enlace a tu programa en el editor de p5.js.
+
+
+### 2. Copia el código de tu programa en la bitácora (recuerda insertarlo usando markdown y el lenguaje javascript).
+
+
+### 3. Muestra una captura de pantalla del resultado de tu programa.
