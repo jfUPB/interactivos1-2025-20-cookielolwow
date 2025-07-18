@@ -22,13 +22,12 @@ En la ingenieria de diseño de entretenimiento digital podemos aplicar los siste
 
 
 ### ¿Qué es el diseño/arte generativo?
-Se refiere a cualquier practica artistica en la que se usa un sistema que tiene unas reglas añadidas que den variabilidad, se pone en marcha con cierto grado de autonomia, contribuyendo a una obra (de diseño y de arte) o dando como resultado la obra terminada.
-
-
+Se refiere a cualquier practica artistica en la que se usa un sistema que introduce unas reglas añadidas y autonomia en la creación.
+Esto significa que al activar el sistema, este contribuya a una obra (de diseño y de arte) o de como resultado la obra terminada.
 
 
 ### ¿Cómo podrías aplicar lo que has visto en tu perfil profesional?
-
+En la Ingeniería en Diseño de Entretenimiento Digital, este enfoque puede aplicarse, por ejemplo, en la creación de escenarios generados  en videojuegos, efectos visuales , o composiciones musicales. También es útil para diseñar personajes, texturas o animaciones que cambien con base en parámetros previamente programados.
 
 ## Actividad 03
 
