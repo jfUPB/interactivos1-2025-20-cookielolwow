@@ -95,5 +95,6 @@ function draw() {
 ```
 
 3. Muestra una captura de pantalla del resultado de tu programa.
- <img width="845" height="469" alt="image" src="https://github.com/user-attachments/assets/95c23488-594d-402c-b95f-bcbfa70ecede" />
+<img width="426.5" height="242.5" alt="image" src="https://github.com/user-attachments/assets/1e98fa3b-cbd8-44ab-a72f-53a1fd96737d" />
+
 
