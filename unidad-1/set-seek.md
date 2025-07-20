@@ -34,7 +34,7 @@ En la Ingeniería en Diseño de Entretenimiento Digital, este enfoque puede apli
 
 identifica los inputs, outputs y el proceso. 
 
-### ◦ inputs
+ **◦ inputs**
 ◦ Puerto microUSB del microbit
 
 ◦ Serial del computador
@@ -46,18 +46,18 @@ identifica los inputs, outputs y el proceso.
 ◦ Movimiento (sacudir el micro:bit)
 
 
-### ◦ Outputs
+**◦ Outputs**
 
-◦ Microbit: Puerto microUSB
+◦ **Microbit:** Puerto microUSB
 
-◦Computador: Serial, Cable, Boton "Send love" y Pantalla
+◦**computador**: Serial, Cable, Boton "Send love" y Pantalla
  
 
-### ◦ Procesos
+**◦ Procesos**
 
-◦ El micro:bit detecta entradas (botones y gestos) y envía un carácter por UART (comunicación serial).
+◦ **El micro:bit** detecta entradas (botones y gestos) y envía un carácter por UART (comunicación serial).
 
-◦ p5.js recibe esos caracteres y actualiza la interfaz gráfica.
+◦ **p5.js**recibe esos caracteres y actualiza la interfaz gráfica.
 
 ◦ Si desde p5.js se envía 'h', el micro:bit interpreta ese dato y cambia la imagen en su display.
 
@@ -66,5 +66,34 @@ identifica los inputs, outputs y el proceso.
 
 ### Crea tu propio programa en p5.js. En tu bitácora:
 1. Escribe el enlace a tu programa en el editor de p5.js.
-2. Copia el código de tu programa en la bitácora (recuerda insertarlo usando markdown y el lenguaje javascript)
+[Ver sketch en p5.js](https://editor.p5js.org/cookielolwow/sketches/ZAhreH82H)
+
+
+2. Copia el código de tu programa en la bitácora 
+```
+ let t = 0;
+
+function setup() {
+  createCanvas(800, 400);
+  background(0);
+  colorMode(HSB, 360, 100, 100);
+  strokeWeight(2);
+}
+
+function draw() {
+  let hue = (t * 2) % 360;
+  stroke(hue, 100, 100);
+
+
+  for (let x = 0; x < width; x += 5) {
+    let y = height / 2 + sin((x + t) * 0.05) * 100;
+    point(x, y);
+  }
+
+  t += 1;
+}
+```
+
 3. Muestra una captura de pantalla del resultado de tu programa.
+ <img width="845" height="469" alt="image" src="https://github.com/user-attachments/assets/95c23488-594d-402c-b95f-bcbfa70ecede" />
+
