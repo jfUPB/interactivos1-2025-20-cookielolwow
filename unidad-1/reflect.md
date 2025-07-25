@@ -70,7 +70,6 @@ Siento que ahora este curso me va a ayudar a expandir las posibilidades en las q
 
 Sin la explicación paso al paso del profesor no hubiera entendido nada, la verdad la parte de la programación estaba confusa, no hubiera sabido interpretar las funciones del codigo y entenderlas.
 
-
 ## Actividad 08
 **Encuentra un compañero de trabajo.
 Intercambien las URLs de sus bitácoras de aprendizaje.
