@@ -37,7 +37,7 @@ __Output__
 4.¿Cuál es la función de la línea uart.write('A') en el código del micro:bit y qué función en p5.js se encarga de “escuchar” ese mensaje?
 
 
-- La función uart.write('A') manda la tecla A a leerla en el rpograma de p5.js, y en este prorama el serialevent lo lee.
+- La función uart.write('A') manda la tecla A a leerla en el programa de p5.js, y en este programa el serialevent lo lee.
 
 
 5.¿Cuál es la diferencia fundamental entre el arte/diseño tradicional y el arte/diseño generativo?
@@ -54,13 +54,13 @@ __Output__
 
 1.¿Qué fue más desafiante para ti en esta unidad: la parte conceptual (entender qué es un sistema físico interactivo) o la parte técnica (hacer que el micro:bit y p5.js se comunicaran)? ¿Por qué?
 
-- Para mi lo mas desafiante fue entender los inputs, procesos y outputs de cada sistema interactivo, siento que fue complicado de entender la logica que iba detrass de cada objeto en el      sistema para saber si eran inputs, procesos o outputs.
+- Para mi lo mas desafiante fue entender los inputs, procesos y outputs de cada sistema interactivo, siento que fue complicado de entender la logica que iba detras de cada objeto en el      sistema para saber si eran inputs, procesos o outputs.
 
 
 2.Describe el momento “¡Aha!” que tuviste cuando lograste que una acción en el micro:bit (presionar un botón, sacudirlo) tuviera un efecto visible en el canvas de p5.js por primera vez. ¿Qué fue lo que entendiste en ese instante?
 
 
-- Fue cuando usamos el micro:bit por primera vez en clase, que al hundir los botoness se cambiaba el color en el canvas. En ese momento entendi la cantidad de posibilidades que habian para crear sistemas interactivos bien interesantes, tambien entendi un poquito mejor lo que el profesor explicaba de las caracteristicas de los sistemas (inputs, procesos y outputs).
+- Fue cuando usamos el micro:bit por primera vez en clase, que al hundir los botones se cambiaba el color en el canvas. En ese momento entendi la cantidad de posibilidades que habian para crear sistemas interactivos bien interesantes, tambien entendi un poquito mejor lo que el profesor explicaba de las caracteristicas de los sistemas (inputs, procesos y outputs).
 
 3.Al inicio de la unidad te pregunté: “¿Este curso para qué me sirve?”. Después de experimentar y construir tu primer prototipo, ¿Cómo ha cambiado o se ha vuelto más concreta tu respuesta a esa pregunta?
 
@@ -97,6 +97,7 @@ Concéntrate en la Actividad 06: control de movimiento con micro:bit de tu compa
 
 
 - La verdad me encantaria crear visualizaciones más complejas en p5.js, quede fascinada con la pagina.
+  
 
 4.**Balance inspiración vs. técnica:** ¿Cómo sentiste el equilibrio entre ver los videos inspiradores de la Actividad 01 y la parte técnica de conectar las herramientas en las actividades 03-06?
 
