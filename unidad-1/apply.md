@@ -26,8 +26,9 @@
    [editor de p5.js](https://editor.p5js.org/cookielolwow/sketches/z1iK2VRAE)
  
 - Copia el código de tu programa en la bitácora (recuerda insertarlo usando markdown y el lenguaje javascript).
-  ```
-    let port;
+
+  ``` js
+  let port;
   let connectBtn;
   let connectionInitialized = false;
   let x = 200;
@@ -78,7 +79,8 @@
   
   ```
 - Copia el código del micro:bit en la bitácora (recuerda insertarlo usando markdown y el lenguaje python).
- ```
+
+``` py
 from microbit import *
 
 uart.init(baudrate=115200)
