@@ -2,7 +2,7 @@
 
 ## 🔎 Fase: Set + Seek
 
-## Actividad 01
+### Actividad 01
 
 **1. Describe detalladamente cómo funciona este ejemplo.**
 
@@ -27,7 +27,7 @@ Para lograr esto, se usa una máquina de estados, que básicamente es una forma 
 
 - Volver a mostrar el nuevo estado del píxel.
 
-## Actividad 02
+### Actividad 02
 ``` py
 from microbit import *
 import utime
