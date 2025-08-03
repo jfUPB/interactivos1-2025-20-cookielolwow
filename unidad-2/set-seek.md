@@ -92,6 +92,63 @@ while True:
 
 - Actualizar el tiempo de inicio cuando se cambia de estado.
 
+## Actividad 3
+1. Explica por qué decimos que este programa permite realizar de manera concurrente varias tareas.
+- Porque puede estar pendiente del botón A y del paso del tiempo al mismo tiempo, no se queda esperando solo una cosa.
+
+  
+2. Identifica los estados, eventos y acciones en el programa.
+**Estados:** 
+
+- STATE_INIT: apenas arranca.
+
+- STATE_HAPPY: muestra la carita feliz.
+
+- STATE_SMILE: muestra una sonrisa.
+
+- STATE_SAD: muestra la carita triste.
+
+**Eventos:**
+
+- Se presiona el botón A.
+
+- Pasa cierto tiempo.
+
+**Acciones**
+
+- Mostrar una imagen (feliz, triste, etc.).
+
+- Reiniciar el reloj (el tiempo).
+
+3. Describe y aplica al menos 3 vectores de prueba para el programa. Para definir un vector de prueba debes llevar al sistema a un estado, generar los eventos y observar el estado siguiente y las acciones que ocurrirán. Por tanto, un vector de prueba tiene unas condiciones iniciales del sistema, unos resultados esperados y los resultados realmente obtenidos. Si el resultado obtenido es igual al esperado entonces el sistema pasó el vector de prueba, de lo contrario el sistema puede tener un error.
+- Prueba 1.
+
+  
+    **Antes:** El programa empieza en STATE_INIT.
+
+    **Qué pasa:** Arranca solo.
+
+    **Lo que debería pasar:** Muestra la carita feliz y cambia a STATE_HAPPY.
+
+- Prueba 2. Botón A en estado feliz
+
+  
+    **Antes:** Está en STATE_HAPPY y aún no han pasado los 1500 ms.
+
+
+    **Qué pasa**: Se presiona el botón A.
+
+
+    **Lo que debería pasar:** Cambia a STATE_SAD y muestra la carita triste.
+
+- Prueba 3. Espera en estado sonrisa
+
+  
+    **Antes:** Está en STATE_SMILE.
+
+    **Qué pasa:** No se toca el botón, solo se espera más de 1 segundo.
+
+    **Lo que debería pasar:** Cambia a STATE_SAD y muestra la carita triste.
 
 
 
