@@ -1,7 +1,7 @@
 # Unidad 3
 ## 🛠 Fase: Apply
 
-Enlace del codigo: [https://editor.p5js.org/cookielolwow/full/z1iK2VRAE](https://editor.p5js.org/cookielolwow/sketches/z1iK2VRAE)
+Enlace del codigo: https://editor.p5js.org/cookielolwow/sketches/z1iK2VRAE
 
 **Codigo p5.js**
 ```js
@@ -205,4 +205,5 @@ while True:
     utime.sleep_ms(100)
 
 ```
+
 
