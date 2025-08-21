@@ -1,5 +1,6 @@
 # Unidad 3
 ## 🛠 Fase: Apply
+## Punto 6 y 7
 
 Enlace del codigo: https://editor.p5js.org/cookielolwow/sketches/z1iK2VRAE
 
@@ -205,5 +206,6 @@ while True:
     utime.sleep_ms(100)
 
 ```
+
 
 
