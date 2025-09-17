@@ -536,8 +536,23 @@ Empecé el ejercicio siguiendo exactamente el instructivo de la Unidad 5 y sigui
 
 
 En esta parte de la unidad hice varias pruebas para comprobar que realmente entendí lo del framing y los paquetes binarios. Primero comparé cómo se comportaba la aplicación cuando usaba el envío en texto con comas, frente al nuevo envío en binario con header y checksum. Me di cuenta de que con el método en texto a veces se colaban lecturas incompletas, lo que hacía que el dibujo saltara o aparecieran mensajes de error. En cambio, al implementar los paquetes binarios con 0xAA y el checksum, la transmisión se sincronizó mejor.
+<img width="543" height="89" alt="image" src="https://github.com/user-attachments/assets/501f2ce5-0fe8-4576-93df-c0975f2d8674" />
 
 
 Para probarlo,  corri la aplicación y miré la consola de p5.js. Cuando los paquetes llegaban bien, veía valores  de microBitX, microBitY y los estados de A y B. Pero cuando movía el micro:bit muy rápido o lo desconectaba y reconectaba, a veces aparecía el mensaje “Checksum error in packet”. Eso me sirvió como evidencia de que el programa realmente estaba descartando basura y no se usaban datos dañados en el dibujo.
+<img width="458" height="105" alt="image" src="https://github.com/user-attachments/assets/4d5a5dfb-820d-4fcf-91bd-542fd7c4c293" />
 
 
+Algo que notamos en el codigo es que los valores que se leen son decimales cuando se supone que lo estamos convirtiendo a enteros. Lo que sucede es que en la parte en la que estamos recibiendo los datos de x y y se realiza una división por 2. Esto convierte los numeros a float.<img width="429" height="54" alt="image" src="https://github.com/user-attachments/assets/71148875-a3f9-4eed-a5a4-627c4ce88de7" />
+
+
+
+## AUTOEVALUACIÓN ##
+
+| CRITERIOS | NOTA | JUSTIFICACIÓN|
+|----------|----------|----------|
+| 1. Profundidad de la Indagación  | 5   | A la par que iba leyendo la guia y resolviendo las preguntas iba profundizando en los temas y buscando por aparte cosas para aclarar mas los temas.  |
+| 2. Calidad de la Experimentación | 5   | Iba probando paso a paso los codigos para ir entendiendo lentamente lo que estaba ocurriendo mientras aplicaba lo nuevo del sistema binario. |
+| 3. Análisis y Reflexión | 4.4   | La bitácora conecta claramente la evidencia (capturas de la terminal, logs de la consola, depurador) con la explicación teórica.|
+| 4. Apropiación y Articulación de Conceptos | 4.4  | La bitácora demuestra una comprensión clara y correcta de cada componente del protocolo.    |
+| TOTAL| 4.7| :)   |
