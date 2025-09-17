@@ -147,7 +147,7 @@ microBitX: -19456 microBitY: 197 microBitAState: false microBitBState: false
 
 ## ACTIVIDAD 4 ##
 **Codigo a modificar**
-´´´js
+```js
 var x = 0;
 var y = 0;
 var stepSize = 5.0;
@@ -329,9 +329,11 @@ function keyPressed() {
   if (keyCode == DOWN_ARROW) angleDistortion -= 0.1;
 }
 
-´´´
+```
+
 **Codigo modificado**
-´´´js
+
+```js
 var x = 0;
 var y = 0;
 var stepSize = 5.0;
@@ -473,7 +475,6 @@ function draw() {
         appState = STATES.RUNNING;
       }
       break;
-
     case STATES.RUNNING:
       if (microBitConnected === false) {
         print("Waiting microbit connection");
@@ -529,8 +530,8 @@ function keyPressed() {
   if (keyCode == UP_ARROW) angleDistortion += 0.1;
   if (keyCode == DOWN_ARROW) angleDistortion -= 0.1;
 }
+```
 
-´´´
 Empecé el ejercicio siguiendo exactamente el instructivo de la Unidad 5 y siguiendo paso a paso lo que el profe iba mostrando en esta unidad.
 
 
@@ -538,4 +539,5 @@ En esta parte de la unidad hice varias pruebas para comprobar que realmente ente
 
 
 Para probarlo,  corri la aplicación y miré la consola de p5.js. Cuando los paquetes llegaban bien, veía valores  de microBitX, microBitY y los estados de A y B. Pero cuando movía el micro:bit muy rápido o lo desconectaba y reconectaba, a veces aparecía el mensaje “Checksum error in packet”. Eso me sirvió como evidencia de que el programa realmente estaba descartando basura y no se usaban datos dañados en el dibujo.
+
 
