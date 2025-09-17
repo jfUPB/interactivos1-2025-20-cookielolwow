@@ -121,7 +121,7 @@ Explica por qué en la unidad anterior teníamos que enviar la información deli
 - Antes habia que indicarle al programa que el texto debia pasar a la siguiente línea porque el tamaño del paquete no era fijo, además permiten que las lineas de texto sean comprensibles para los humanos. Ahora no es necesario porque el tamaño del paquete es fijo y no necesita un delimitador.
 
 ¿Qué ves en la consola? ¿Por qué crees que se produce este error?
-- Cuando se envían datos a través de una comunicación serial, los bytes pueden llegar en fragmentos arbitrarios y sin respetar los límites de los paquetes.
+- Cuando se envían datos a través de una comunicación serial, los bytes pueden llegar en fragmentos arbitrarios y sin respetar los límites de los paquetes. Cosa que produce una desincronización en la lectura de datos.
 ``` js 
 microBitX: 5121 microBitY: -19456 microBitAState: false microBitBState: false 
  
@@ -141,4 +141,8 @@ microBitX: 201 microBitY: -22016 microBitAState: false microBitBState: true
 B released 
 microBitX: -19456 microBitY: 197 microBitAState: false microBitBState: false 
 ```
+¿Qué cambios tienen los programas y ¿Qué puedes observar en la consola del editor de p5.js?
 
+- Con el framing (header + checksum) lo que pasa en la consola es mucho más claro. Ahora el micro:bit envía 8 bytes: primero el header [0xAA], después los 6 datos, y al final el checksum. Ahora en la consola se ven sincronizados los datos con las variable del micro:bit.
+
+## ACTIVIDAD 4 ##
