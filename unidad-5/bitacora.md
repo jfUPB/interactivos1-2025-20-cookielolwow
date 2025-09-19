@@ -41,6 +41,8 @@ if (port.availableBytes() > 0) {
 
 ¿Cómo se generan los eventos A pressed y B released que se generan en p5.js a partir de los datos que envía el micro:bit?
 
+
+<a name="cod1"></a>
  ```js
 function updateButtonStates(newAState, newBState) {
   if (newAState === true && prevmicroBitAState === false) {
@@ -551,8 +553,9 @@ Algo que notamos en el codigo es que los valores que se leen son decimales cuand
 
 | CRITERIOS | NOTA | JUSTIFICACIÓN|
 |----------|----------|----------|
-| 1. Profundidad de la Indagación  | 5   | A la par que iba leyendo la guia y resolviendo las preguntas iba profundizando en los temas y buscando por aparte cosas para aclarar mas los temas.  |
+| 1. Profundidad de la Indagación  | 5   | A la par que iba leyendo la guia y resolviendo las preguntas iba profundizando en los temas y buscando por aparte cosas para aclarar mas los temas. (No aplicam, es un ejemplo del profe)Por ejemplo ver el [código 1](#cod1) |
 | 2. Calidad de la Experimentación | 5   | Iba probando paso a paso los codigos para ir entendiendo lentamente lo que estaba ocurriendo mientras aplicaba lo nuevo del sistema binario. |
 | 3. Análisis y Reflexión | 4.4   | La bitácora conecta claramente la evidencia (capturas de la terminal, logs de la consola, depurador) con la explicación teórica.|
 | 4. Apropiación y Articulación de Conceptos | 4.4  | La bitácora demuestra una comprensión clara y correcta de cada componente del protocolo.    |
 | TOTAL| 4.7| :)   |
+
