@@ -2,11 +2,41 @@
 # Evidencias de la unidad 6
 ## Actividad 01
 **Preparación del entorno y primer contacto**
-- ¿Qué ocurrió en la terminal cuando ejecutaste npm install? ¿Cuál crees que es su propósito?
-- ¿Qué mensaje específico apareció en la terminal después de ejecutar npm start? ¿Qué indica este mensaje?
-- Describe lo que ves inicialmente en page1 y page2 en tu navegador.
-- ¿Qué mensajes aparecieron en la terminal del servidor cuando abriste page1 y page2?
-- Describe qué sucede en ambas páginas del navegador cuando mueves una de las ventanas. ¿Cambia algo visualmente? ¿Qué mensajes aparecen (si los hay) en la consola del navegador (usualmente accesible con F12 -> Pestaña Consola) y en la terminal del servidor?
+
+
+¿Qué ocurrió en la terminal cuando ejecutaste npm install? ¿Cuál crees que es su propósito?
+
+
+<img width="252" height="112" alt="image" src="https://github.com/user-attachments/assets/30834544-44bd-4011-98ee-2a430ba4024f" />
+
+
+ - Creo que su proposito era descargal algún archivo.
+   
+¿Qué mensaje específico apareció en la terminal después de ejecutar npm start? ¿Qué indica este mensaje?
+
+
+  <img width="1026" height="78" alt="image" src="https://github.com/user-attachments/assets/517e381d-d624-4be4-81f2-9916ea7e4b5d" />
+
+- Este mensaje indica que se está ejecutando el script definido como start en el archivo package.json. En este caso, ese script está configurado para correr el archivo server.js usando Node.js.
+
+  
+Describe lo que ves inicialmente en page1 y page2 en tu navegador.
+
+- Inicialmente veia un mesnaje que decia algo como esperando la conexion de la otra ventana. Luego ya cuando las dos estaban abiertas en cada pagina habia un circulo rojo conectado por una linea desde el centro al circulo de la otra pagina.
+
+  
+¿Qué mensajes aparecieron en la terminal del servidor cuando abriste page1 y page2?
+
+
+<img width="471" height="47" alt="image" src="https://github.com/user-attachments/assets/9038f0b3-41c1-46ad-ae72-9e0a89b4aa71" />
+
+
+Describe qué sucede en ambas páginas del navegador cuando mueves una de las ventanas. ¿Cambia algo visualmente? ¿Qué mensajes aparecen (si los hay) en la consola del navegador (usualmente accesible con F12 -> Pestaña Consola) y en la terminal del servidor?
+
+- En ambas paginas los circulos como que se conectan y cuando se mueven la pestañas se ajustan los ejes de los circulos como persiguiendose.
+
+  <img width="900" height="277" alt="image" src="https://github.com/user-attachments/assets/0ddfc88e-cece-4bcd-852e-71561ed789c1" />
+
 ## Actividad 02
 **🪼🫧 Reporta en tu bitácora**
 
@@ -116,4 +146,8 @@ Resume con tus propias palabras la diferencia fundamental entre una comunicació
 -  La diferencia entre la comunicación HTTP tradicional y la comunicación usando Websockets nace de que que con HTTP la comunicación no es fluida, cada qeu se hace una petición el servidor responde una sola vez, y si se quiere mas información se tiene que volver a pedir. En cambio, con Websockets la comunicación es como una llamada telefónica continua, ambos lados se mandan mensajes en tiempo real sin necesidad de estar pidiendo información todo el tiempo.
 
 -  Los Websockets los podemos ver en los chats como en whatsapp, en juegos multijugador, en trabaos colaborativos como los documentos en google docs.
-  
+
+
+## Actividad 03
+
+
