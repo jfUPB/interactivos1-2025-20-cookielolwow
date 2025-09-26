@@ -149,6 +149,7 @@ Resume con tus propias palabras la diferencia fundamental entre una comunicació
 
 
 ## Actividad 03
+**🪼🫧 Experimenta**
 
 Detén el servidor si está corriendo.
 
@@ -174,4 +175,35 @@ Ahora intenta acceder a http://localhost:3000/pagina_uno. ¿Funciona?
 
 ¿Qué te dice esto sobre cómo el servidor asocia URLs con respuestas? Restaura el código.
 
-La ruta pagina_uno no esta definida, por lo cual la función no la va a encontrar por ningun lado.
+- Me dice que el asocia la url con el nombre definido para saber que usar.
+
+
+**🪼🫧 Experimenta**
+
+Asegúrate de que el servidor esté corriendo (npm start).
+
+
+
+Abre http://localhost:3000/page1 en una pestaña. Observa la terminal del servidor. ¿Qué mensaje ves? Anota el ID.
+```
+A user connected - ID: F46MyBNghJ9zPR1BAAAB
+
+```
+
+
+Abre http://localhost:3000/page2 en OTRA pestaña. Observa la terminal. ¿Qué mensaje ves? ¿El ID es diferente?
+```
+A user connected - ID: QH6C85lZmpgZ8D6kAAAD
+
+```
+Cierra la pestaña de page1. Observa la terminal. ¿Qué mensaje ves? ¿Coincide el ID con el que anotaste?
+```
+User disconnected - ID: F46MyBNghJ9zPR1BAAAB
+```
+- Si coincide.
+- 
+Cierra la pestaña de page2. Observa la terminal.
+```
+User disconnected - ID: QH6C85lZmpgZ8D6kAAAD
+```
+- Si coincide.
