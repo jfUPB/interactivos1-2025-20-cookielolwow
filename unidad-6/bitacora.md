@@ -226,7 +226,7 @@ Received win2update from ID: QH6C85lZmpgZ8D6kAAAD Data: { x: 543, y: 179, width:
 Experimento clave: cambia socket.broadcast.emit(‘getdata’, page1); por socket.emit(‘getdata’, page1); (quitando broadcast). Reinicia el servidor, abre ambas páginas. Mueve page1. ¿Se actualiza la visualización en page2? ¿Por qué sí o por qué no? (Pista: ¿A quién le envía el mensaje socket.emit?). Restaura el código a broadcast.emit.
 
 - Al cambiar el código la page 1 al moverla deja de sincronizarce con la otra y al mover la page 2 vuelve a la "normalidad" pero no sincronizado del todo. El mensaje de socket. emit se manda el mensaje a si mismo y el broadcast.emi se lo manda a todos los clientes menos al que esta mandando el mensaje.
-- 
+  
 **🪼🫧 Experimenta**
 
 Detén el servidor.
@@ -243,3 +243,4 @@ Intenta abrir http://localhost:3001/page1. ¿Funciona?
 ¿Qué aprendiste sobre la variable port y la función listen? Restaura el puerto a 3000.
 
 - La variable de port indica donde esta el servidor y la función listen lo inicializa en ese puerto especifico.
+
