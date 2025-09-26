@@ -150,4 +150,28 @@ Resume con tus propias palabras la diferencia fundamental entre una comunicació
 
 ## Actividad 03
 
+Detén el servidor si está corriendo.
 
+
+Cambia la primera ruta de /page1 a /pagina_uno.
+
+
+Inicia el servidor.
+
+
+Intenta acceder a http://localhost:3000/page1. ¿Funciona?
+
+- nop
+  <img width="326" height="117" alt="image" src="https://github.com/user-attachments/assets/72a81f82-ccfd-4410-ade5-e1af6d66798e" />
+
+
+Ahora intenta acceder a http://localhost:3000/pagina_uno. ¿Funciona?
+
+-  sip
+
+<img width="549" height="624" alt="image" src="https://github.com/user-attachments/assets/632bda7d-8f55-46ef-b7f9-d11e0aaa114e" />
+
+
+¿Qué te dice esto sobre cómo el servidor asocia URLs con respuestas? Restaura el código.
+
+La ruta pagina_uno no esta definida, por lo cual la función no la va a encontrar por ningun lado.
