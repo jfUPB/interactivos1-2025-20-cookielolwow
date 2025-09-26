@@ -201,9 +201,45 @@ Cierra la pestaña de page1. Observa la terminal. ¿Qué mensaje ves? ¿Coincide
 User disconnected - ID: F46MyBNghJ9zPR1BAAAB
 ```
 - Si coincide.
-- 
+  
 Cierra la pestaña de page2. Observa la terminal.
 ```
 User disconnected - ID: QH6C85lZmpgZ8D6kAAAD
 ```
 - Si coincide.
+
+**🪼🫧 Experimenta**
+
+Inicia el servidor y abre page1 y page2.
+
+
+Mueve la ventana de page1. Observa la terminal del servidor. ¿Qué evento se registra (win1update o win2update)? ¿Qué datos (Data:) ves?
+```
+Received win1update from ID: F46MyBNghJ9zPR1BAAAB Data: { x: 179, y: 192, width: 989, height: 944 }
+```
+
+Mueve la ventana de page2. Observa la terminal. ¿Qué evento se registra ahora? ¿Qué datos ves?
+```
+Received win2update from ID: QH6C85lZmpgZ8D6kAAAD Data: { x: 543, y: 179, width: 989, height: 944 }
+```
+
+Experimento clave: cambia socket.broadcast.emit(‘getdata’, page1); por socket.emit(‘getdata’, page1); (quitando broadcast). Reinicia el servidor, abre ambas páginas. Mueve page1. ¿Se actualiza la visualización en page2? ¿Por qué sí o por qué no? (Pista: ¿A quién le envía el mensaje socket.emit?). Restaura el código a broadcast.emit.
+
+- Al cambiar el código la page 1 al moverla deja de sincronizarce con la otra y al mover la page 2 vuelve a la "normalidad" pero no sincronizado del todo. El mensaje de socket. emit se manda el mensaje a si mismo y el broadcast.emi se lo manda a todos los clientes menos al que esta mandando el mensaje.
+- 
+**🪼🫧 Experimenta**
+
+Detén el servidor.
+
+Cambia const port = 3000; a const port = 3001;.
+
+Inicia el servidor. ¿Qué mensaje ves en la consola? ¿En qué puerto dice que está escuchando?
+
+Intenta abrir http://localhost:3000/page1. ¿Funciona?
+- nop
+Intenta abrir http://localhost:3001/page1. ¿Funciona?
+-sip
+
+¿Qué aprendiste sobre la variable port y la función listen? Restaura el puerto a 3000.
+
+- La variable de port indica donde esta el servidor y la función listen lo inicializa en ese puerto especifico.
