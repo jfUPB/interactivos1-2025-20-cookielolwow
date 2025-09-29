@@ -236,11 +236,15 @@ Cambia const port = 3000; a const port = 3001;.
 Inicia el servidor. ¿Qué mensaje ves en la consola? ¿En qué puerto dice que está escuchando?
 
 Intenta abrir http://localhost:3000/page1. ¿Funciona?
+
 - nop
+  
 Intenta abrir http://localhost:3001/page1. ¿Funciona?
--sip
+
+- sip
 
 ¿Qué aprendiste sobre la variable port y la función listen? Restaura el puerto a 3000.
 
 - La variable de port indica donde esta el servidor y la función listen lo inicializa en ese puerto especifico.
+
 
