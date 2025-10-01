@@ -970,7 +970,7 @@ server.listen(port, () => {
 
 **Nota propuesta:** 5.0
 
-Justificación general
+**Justificación general**
 
 Considero que mi desempeño en esta unidad merece la nota máxima porque realicé TODAS las actividades propuestas, documenté paso a paso cada proceso con evidencias en la bitácora, respondí las preguntas de reflexión con ejemplos propios, realicé modificaciones creativas al código y logré aplicar los conceptos vistos (cliente-servidor, HTTP, Socket.IO, p5.js, etc.) en un proyecto funcional.
 
@@ -1014,7 +1014,7 @@ Considero que mi desempeño en esta unidad merece la nota máxima porque realic�
 
 
 
-**Actividad 03** *
+**Actividad 03** 
 
  **Defensa de la nota:**
 
@@ -1048,7 +1048,7 @@ Considero que mi desempeño en esta unidad merece la nota máxima porque realic�
   
 **Evidencias:** pruebas en consola, modificaciones de código documentadas y reflexión sobre el diseño eficiente bien bacana :) .
 
-**Actividad 05***
+**Actividad 05**
 
  **Defensa de la nota:**
 
@@ -1056,4 +1056,5 @@ Considero que mi desempeño en esta unidad merece la nota máxima porque realic�
 - Documenté todos los archivos (server, page1, page2, scripts JS).
 
 **Evidencias:** código completo del proyecto, explicación de la idea, bocetos y pruebas visuales.
+
 
