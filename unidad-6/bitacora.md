@@ -248,3 +248,723 @@ Intenta abrir http://localhost:3001/page1. ¿Funciona?
 - La variable de port indica donde esta el servidor y la función listen lo inicializa en ese puerto especifico.
 
 
+## Actividad 04
+**Explorando los clientes (p5.js + Socket.IO)**
+
+Ahora nos enfocaremos en cómo uno de los clientes, page2.js, interactúa con el servidor y visualiza la información. El código de page1.js es muy similar, así que entender uno te ayudará a entender el otro.
+
+**🪼🫧 Experimenta**
+
+Abre page2.html en tu navegador (con el servidor corriendo).
+
+
+Abre la consola de desarrollador (F12).
+
+
+Detén el servidor Node.js (Ctrl+C).
+
+
+Refresca la página page2.html. Observa la consola del navegador. ¿Ves algún error relacionado con la conexión? ¿Qué indica?
+
+
+<img width="553" height="176" alt="image" src="https://github.com/user-attachments/assets/7004437c-bada-41dd-95df-c94548047507" />
+
+Vuelve a iniciar el servidor y refresca la página. ¿Desaparecen los errores?
+
+- si
+
+**🪼🫧 Experimenta**
+
+
+Comenta la línea socket.emit(‘win2update’, currentPageData, socket.id); dentro del listener connect.
+
+
+Reinicia el servidor y refresca page1.html y page2.html.
+
+
+Mueve la ventana de page2 un poco para que envíe una actualización.
+
+
+¿Qué pasó? ¿Por qué?
+
+<img width="1029" height="325" alt="image" src="https://github.com/user-attachments/assets/01bf9b7f-336d-4202-b6d9-258a1d31053d" />
+
+ - Al comentar esa linea se corto la comunicación.
+**🪼🫧 Experimenta**
+
+
+Asegúrate de tener este console.log en page2.js.
+
+
+Abre ambas páginas.
+
+
+Mueve la ventana de page1. Observa la consola del navegador de page2. ¿Qué datos muestra?
+
+
+<img width="394" height="306" alt="image" src="https://github.com/user-attachments/assets/f801f140-d5cc-4b89-8b80-1613b139b4d0" />
+
+
+Mueve la ventana de page2. Observa la consola de page1. ¿Qué pasa? ¿Por qué?
+
+
+<img width="440" height="258" alt="image" src="https://github.com/user-attachments/assets/3bd214d5-5ab3-4025-8e17-66108c8df50a" />
+
+
+Basicamente significa que la aplicación esta sincronizando los datos entre las dos pestañas. Cada que se mueve una de las pestañas se envía por socket.io  y luego aparece en consola como Received valid remote data.
+
+
+**🪼🫧 Experimenta**
+
+
+Observa checkWindowPosition() en page2.js y modifica el código del if para comprobar si el código dentreo de este se ejecuta.
+
+
+Mueve cada ventana y observa las consolas.
+
+
+¿Qué puedes concluir y por qué?
+Concluyó que el sistema está diseñado para detectar y transmitir solo cuando hay cambios reales, lo cual evita que se envíen datos innecesarios.
+
+**🪼🫧 Experimenta**
+
+(¡Sé creativo!)
+
+
+Cambia el background(220) para que dependa de la distancia entre las ventanas. Puedes calcular la magnitud del resultingVector usando let distancia = resultingVector.mag(); y luego usa map() para convertir esa distancia a un valor de gris o color. background(map(distancia, 0, 1000, 255, 0)); (ajusta el rango 0-1000 según sea necesario).
+
+
+Inventa otra modificación creativa.
+
+
+<img width="664" height="531" alt="image" src="https://github.com/user-attachments/assets/d309edab-bd09-42f7-a2bc-65462d66dbab" />
+
+
+## Actividad 05
+### Apply
+**🪼🫧 En tu bitácora**
+
+Explica tu idea y realiza algunos bocetos.
+- Quiero que la aplicación sea de unas ondas que imiten el movimiento de las olas y que cuando las dos pestañas se separen se simule una "cascada"  hacia la separación.
+  <img width="952" height="604" alt="image" src="https://github.com/user-attachments/assets/9cf1f4be-8f68-42d1-97bd-7c42a9a15061" />
+
+Incluye todos los códigos (servidor y clientes) en tu bitácora.
+
+
+page1.html
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventana Oceánica 1</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.0/lib/p5.min.js"></script>
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #003264; /* Fondo azul oscuro del océano */
+        }
+    </style>
+</head>
+<body>
+    <script defer src="page1.js"></script>
+</body>
+</html>
+```
+
+page2.html
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventana Oceánica 2</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.0/lib/p5.min.js"></script>
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #003264; /* Fondo azul oscuro del océano */
+        }
+    </style>
+</head>
+
+<body>
+    <script defer src="page2.js"></script>
+</body>
+</html>
+```
+
+page1.js
+```js
+let currentPageData = {
+    x: window.screenX,
+    y: window.screenY,
+    width: window.innerWidth,
+    height: window.innerHeight
+}
+
+let remotePageData = { x: 0, y: 0, width: 100, height: 100 };
+let socket;
+let isConnected = false;
+let hasRemoteData = false;
+let isFullySynced = false;
+let noiseOffset = 0; 
+let oceanLevelY = 0; 
+let particles = [];
+const PARTICLE_COUNT = 50;
+
+function setup() {
+    createCanvas(windowWidth, windowHeight);
+    frameRate(60);
+    socket = io();
+    
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+        particles.push(new Particle());
+    }
+
+    socket.on('connect', () => {
+        isConnected = true;
+        socket.emit('win1update', currentPageData);
+        setTimeout(() => {
+            socket.emit('requestSync');
+        }, 500);
+    });
+
+    socket.on('getdata', (response) => {
+        if (response && response.data && isValidRemoteData(response.data)) {
+            remotePageData = response.data;
+            hasRemoteData = true;
+            socket.emit('confirmSync');
+        }
+    });
+
+    socket.on('fullySynced', (synced) => {
+        isFullySynced = synced;
+    });
+
+    socket.on('peerDisconnected', () => {
+        hasRemoteData = false;
+        isFullySynced = false;
+    });
+
+    socket.on('disconnect', () => {
+        isConnected = false;
+        hasRemoteData = false;
+        isFullySynced = false;
+    });
+
+    socket.on('syncUpdate', (data) => {
+        if (data.noiseOffset !== undefined) noiseOffset = data.noiseOffset;
+        if (data.oceanLevelY !== undefined) oceanLevelY = data.oceanLevelY;
+    });
+}
+
+function isValidRemoteData(data) {
+    return data && 
+           typeof data.x === 'number' && 
+           typeof data.y === 'number' && 
+           typeof data.width === 'number' && data.width > 0 &&
+           typeof data.height === 'number' && data.height > 0;
+}
+
+function checkWindowPosition() {
+    // Lectura de nuevas posiciones/tamaños
+    const newX = window.screenX;
+    const newY = window.screenY;
+    const newW = window.innerWidth;
+    const newH = window.innerHeight;
+
+    // Verificar si ha habido cambios antes de actualizar y emitir
+    if (newX !== currentPageData.x || newY !== currentPageData.y || 
+        newW !== currentPageData.width || newH !== currentPageData.height) {
+
+        currentPageData.x = newX;
+        currentPageData.y = newY;
+        currentPageData.width = newW;
+        currentPageData.height = newH;
+        
+        socket.emit('win1update', currentPageData); 
+    }
+}
+
+
+function draw() {
+    background(0, 50, 100); 
+    
+    if (!isConnected || !hasRemoteData || !isFullySynced || oceanLevelY === 0) {
+        showStatus(
+            !isConnected ? 'Conectando al servidor...' : 
+            !hasRemoteData ? 'Esperando conexión de la otra ventana...' : 
+            oceanLevelY === 0 ? 'Obteniendo nivel del océano...' :
+            'Sincronizando datos...', 
+            color(255, 165, 0)
+        );
+        return;
+    }
+
+    checkWindowPosition(); 
+
+    // **CORRECCIÓN CLAVE:** Usar window.screenY para la lectura más inmediata de la posición.
+    const waveY = oceanLevelY - window.screenY; 
+
+    // Configuración de la ola
+    const waveHeight = 80;
+    const resolution = 15; 
+    const noiseScale = 0.005; 
+    
+    noStroke();
+    fill(0, 150, 200, 200); 
+
+    beginShape();
+    vertex(0, height);
+    
+    let isGapDetected = false;
+    let gapSide = null; 
+
+    // Detección de grieta (horizontal)
+    if (currentPageData.x + currentPageData.width < remotePageData.x) { 
+        isGapDetected = true;
+        gapSide = 'right';
+    } else if (remotePageData.x + remotePageData.width < currentPageData.x) { 
+        isGapDetected = true;
+        gapSide = 'left';
+    }
+    
+    // Dibujar la ola
+    for (let i = 0; i <= resolution; i++) {
+        let x = map(i, 0, resolution, 0, width);
+        let noiseVal = noise((currentPageData.x + x) * noiseScale, noiseOffset);
+        let y = waveY + map(noiseVal, 0, 1, -waveHeight / 2, waveHeight / 2);
+
+        // Aplanar el borde para la cascada
+        if (isGapDetected) {
+            if (gapSide === 'right' && x > width * 0.9) { 
+                 y = lerp(y, waveY, (x - width * 0.9) / (width * 0.1));
+            } else if (gapSide === 'left' && x < width * 0.1) { 
+                y = lerp(y, waveY, (width * 0.1 - x) / (width * 0.1));
+            }
+        }
+
+        vertex(x, y);
+    }
+    
+    vertex(width, height);
+    endShape(CLOSE);
+    
+    // --- Lógica de la Cascada (solo si hay GAP) ---
+    if (isGapDetected) {
+        push();
+        if (gapSide === 'right') {
+            translate(width, waveY); 
+        } else {
+            translate(0, waveY); 
+        }
+
+        for (let p of particles) {
+            p.update();
+            p.show();
+        }
+        pop();
+    }
+}
+
+class Particle {
+    constructor() {
+        this.reset();
+    }
+
+    reset() {
+        this.x = random(-5, 5); 
+        this.y = random(0); 
+        this.z = random(0, 20); 
+        this.vy = random(1, 4); 
+        this.life = 255;
+    }
+
+    update() {
+        this.y += this.vy;
+        this.life -= 5;
+        if (this.life < 0) {
+            this.reset();
+        }
+    }
+
+    show() {
+        let size = map(this.z, 0, 20, 2, 8);
+        let alpha = map(this.life, 0, 255, 0, 200);
+        fill(100, 200, 255, alpha); 
+        ellipse(this.x, this.y, size, size);
+    }
+}
+
+
+function showStatus(message, statusColor) {
+    textSize(24);
+    textAlign(CENTER, CENTER);
+    noStroke();
+    fill(0, 0, 0, 180);
+    rectMode(CENTER);
+    let textW = textWidth(message) + 40;
+    let textH = 40;
+    rect(width / 2, height / 2, textW, textH, 10);
+    fill(statusColor);
+    text(message, width / 2, height / 2);
+}
+
+function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
+    checkWindowPosition(); 
+}
+```
+
+page2.js
+```js
+let currentPageData = {
+    x: window.screenX,
+    y: window.screenY,
+    width: window.innerWidth,
+    height: window.innerHeight
+
+}
+
+let remotePageData = { x: 0, y: 0, width: 100, height: 100 };
+let socket;
+let isConnected = false;
+let hasRemoteData = false;
+let isFullySynced = false;
+let noiseOffset = 0; 
+let oceanLevelY = 0; 
+let particles = [];
+const PARTICLE_COUNT = 50;
+
+function setup() {
+    createCanvas(windowWidth, windowHeight);
+    frameRate(60);
+    socket = io();
+    
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+        particles.push(new Particle());
+    }
+
+    socket.on('connect', () => {
+        isConnected = true;
+        socket.emit('win2update', currentPageData);
+        setTimeout(() => {
+            socket.emit('requestSync');
+        }, 500);
+    });
+
+    socket.on('getdata', (response) => {
+        if (response && response.data && isValidRemoteData(response.data)) {
+            remotePageData = response.data;
+            hasRemoteData = true;
+            socket.emit('confirmSync');
+        }
+    });
+
+    socket.on('fullySynced', (synced) => {
+        isFullySynced = synced;
+    });
+
+    socket.on('peerDisconnected', () => {
+        hasRemoteData = false;
+        isFullySynced = false;
+    });
+
+    socket.on('disconnect', () => {
+        isConnected = false;
+        hasRemoteData = false;
+        isFullySynced = false;
+    });
+
+    socket.on('syncUpdate', (data) => {
+        if (data.noiseOffset !== undefined) noiseOffset = data.noiseOffset;
+        if (data.oceanLevelY !== undefined) oceanLevelY = data.oceanLevelY;
+    });
+}
+
+function isValidRemoteData(data) {
+    return data && 
+           typeof data.x === 'number' && 
+           typeof data.y === 'number' && 
+           typeof data.width === 'number' && data.width > 0 &&
+           typeof data.height === 'number' && data.height > 0;
+}
+
+function checkWindowPosition() {
+    // Lectura de nuevas posiciones/tamaños
+    const newX = window.screenX;
+    const newY = window.screenY;
+    const newW = window.innerWidth;
+    const newH = window.innerHeight;
+
+    // Verificar si ha habido cambios antes de actualizar y emitir
+    if (newX !== currentPageData.x || newY !== currentPageData.y || 
+        newW !== currentPageData.width || newH !== currentPageData.height) {
+
+        currentPageData.x = newX;
+        currentPageData.y = newY;
+        currentPageData.width = newW;
+        currentPageData.height = newH;
+        
+        socket.emit('win2update', currentPageData); 
+    }
+}
+
+
+function draw() {
+    background(0, 50, 100); 
+    
+    if (!isConnected || !hasRemoteData || !isFullySynced || oceanLevelY === 0) {
+        showStatus(
+            !isConnected ? 'Conectando al servidor...' : 
+            !hasRemoteData ? 'Esperando conexión de la otra ventana...' : 
+            oceanLevelY === 0 ? 'Obteniendo nivel del océano...' :
+            'Sincronizando datos...', 
+            color(255, 165, 0)
+        );
+        return;
+    }
+
+    checkWindowPosition(); 
+    
+    // **CORRECCIÓN CLAVE:** Usar window.screenY para la lectura más inmediata de la posición.
+    const waveY = oceanLevelY - window.screenY; 
+
+    // Configuración de la ola
+    const waveHeight = 80;
+    const resolution = 15; 
+    const noiseScale = 0.005; 
+    
+    noStroke();
+    fill(0, 150, 200, 200); 
+
+    beginShape();
+    vertex(0, height);
+    
+    let isGapDetected = false;
+    let gapSide = null; 
+
+    // Detección de grieta (horizontal)
+    if (currentPageData.x + currentPageData.width < remotePageData.x) { 
+        isGapDetected = true;
+        gapSide = 'right';
+    } else if (remotePageData.x + remotePageData.width < currentPageData.x) { 
+        isGapDetected = true;
+        gapSide = 'left';
+    }
+    
+    // Dibujar la ola
+    for (let i = 0; i <= resolution; i++) {
+        let x = map(i, 0, resolution, 0, width);
+        let noiseVal = noise((currentPageData.x + x) * noiseScale, noiseOffset);
+        let y = waveY + map(noiseVal, 0, 1, -waveHeight / 2, waveHeight / 2);
+
+        // Aplanar el borde para la cascada
+        if (isGapDetected) {
+            if (gapSide === 'right' && x > width * 0.9) { 
+                 y = lerp(y, waveY, (x - width * 0.9) / (width * 0.1));
+            } else if (gapSide === 'left' && x < width * 0.1) { 
+                y = lerp(y, waveY, (width * 0.1 - x) / (width * 0.1));
+            }
+        }
+
+        vertex(x, y);
+    }
+    
+    vertex(width, height);
+    endShape(CLOSE);
+    
+    // --- Lógica de la Cascada (solo si hay GAP) ---
+    if (isGapDetected) {
+        push();
+        if (gapSide === 'right') {
+            translate(width, waveY); 
+        } else {
+            translate(0, waveY); 
+        }
+
+        for (let p of particles) {
+            p.update();
+            p.show();
+        }
+        pop();
+    }
+}
+
+class Particle {
+    constructor() {
+        this.reset();
+    }
+
+    reset() {
+        this.x = random(-5, 5); 
+        this.y = random(0); 
+        this.z = random(0, 20); 
+        this.vy = random(1, 4); 
+        this.life = 255;
+    }
+
+    update() {
+        this.y += this.vy;
+        this.life -= 5;
+        if (this.life < 0) {
+            this.reset();
+        }
+    }
+
+    show() {
+        let size = map(this.z, 0, 20, 2, 8);
+        let alpha = map(this.life, 0, 255, 0, 200);
+        fill(100, 200, 255, alpha); 
+        ellipse(this.x, this.y, size, size);
+    }
+}
+
+
+function showStatus(message, statusColor) {
+    textSize(24);
+    textAlign(CENTER, CENTER);
+    noStroke();
+    fill(0, 0, 0, 180);
+    rectMode(CENTER);
+    let textW = textWidth(message) + 40;
+    let textH = 40;
+    rect(width / 2, height / 2, textW, textH, 10);
+    fill(statusColor);
+    text(message, width / 2, height / 2);
+}
+
+function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
+    checkWindowPosition(); 
+}
+```
+
+server.js
+```js
+const express = require('express');
+const http = require('http');
+const socketIO = require('socket.io');
+const path = require('path');
+const app = express();
+const server = http.createServer(app); 
+const io = socketIO(server); 
+const port = 3000;
+
+let page1 = { x: 0, y: 0, width: 100, height: 100 };
+let page2 = { x: 0, y: 0, width: 100, height: 100 };
+let connectedClients = new Map();
+let syncedClients = new Set();
+let noiseOffset = 0; // Para sincronizar la animación de olas
+const OCEAN_LEVEL_Y = 500; // Nuevo: Nivel Y absoluto del agua en la pantalla (Ej. 500px desde el tope)
+
+app.use(express.static(path.join(__dirname, 'views')));
+
+app.get('/page1', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'page1.html'));
+});
+
+app.get('/page2', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'page2.html'));
+});
+
+// Bucle para actualizar la variable de tiempo de las olas
+setInterval(() => {
+    noiseOffset += 0.005; // Velocidad de la ola
+    // Enviar la hora de la ola y el nivel del océano
+    io.emit('syncUpdate', { 
+        noiseOffset: noiseOffset,
+        oceanLevelY: OCEAN_LEVEL_Y
+    });
+}, 1000 / 60); // 60 FPS
+
+io.on('connection', (socket) => {
+    console.log('A user connected - ID:', socket.id);
+    connectedClients.set(socket.id, { page: null, synced: false });
+    
+    socket.on('disconnect', () => {
+        console.log('User disconnected - ID:', socket.id);
+        connectedClients.delete(socket.id);
+        syncedClients.delete(socket.id);
+        socket.broadcast.emit('peerDisconnected');
+        checkAndNotifySyncStatus(); 
+    });
+
+    socket.on('win1update', (window1) => {
+        if (isValidWindowData(window1)) {
+            page1 = window1;
+            connectedClients.set(socket.id, { page: 'page1', synced: connectedClients.get(socket.id)?.synced || false });
+            socket.broadcast.emit('getdata', { data: page1, from: 'page1' });
+            checkAndNotifySyncStatus();
+        }
+    });
+
+    socket.on('win2update', (window2) => {
+        if (isValidWindowData(window2)) {
+            page2 = window2;
+            connectedClients.set(socket.id, { page: 'page2', synced: connectedClients.get(socket.id)?.synced || false });
+            socket.broadcast.emit('getdata', { data: page2, from: 'page2' });
+            checkAndNotifySyncStatus();
+        }
+    });
+
+    socket.on('requestSync', () => {
+        const clientInfo = connectedClients.get(socket.id);
+        if (clientInfo?.page === 'page1') {
+            socket.emit('getdata', { data: page2, from: 'page2' });
+        } else if (clientInfo?.page === 'page2') {
+            socket.emit('getdata', { data: page1, from: 'page1' });
+        }
+        // Enviar datos de sincronización
+        socket.emit('syncUpdate', { 
+            noiseOffset: noiseOffset,
+            oceanLevelY: OCEAN_LEVEL_Y
+        });
+    });
+
+    socket.on('confirmSync', () => {
+        syncedClients.add(socket.id);
+        const clientInfo = connectedClients.get(socket.id);
+        if (clientInfo) {
+            connectedClients.set(socket.id, { ...clientInfo, synced: true });
+        }
+        checkAndNotifySyncStatus();
+    });    
+});
+
+function isValidWindowData(data) {
+    return data && 
+           typeof data.x === 'number' && 
+           typeof data.y === 'number' && 
+           typeof data.width === 'number' && data.width > 0 &&
+           typeof data.height === 'number' && data.height > 0;
+}
+
+function checkAndNotifySyncStatus() {
+    const page1Clients = Array.from(connectedClients.entries()).filter(([, info]) => info.page === 'page1');
+    const page2Clients = Array.from(connectedClients.entries()).filter(([, info]) => info.page === 'page2');
+    
+    const bothPagesConnected = page1Clients.length > 0 && page2Clients.length > 0;
+    const allClientsSynced = Array.from(connectedClients.keys()).every(id => syncedClients.has(id));
+    const hasMinimumClients = connectedClients.size >= 2;
+
+    const fullySynced = bothPagesConnected && allClientsSynced && hasMinimumClients;
+    io.emit('fullySynced', fullySynced);
+}
+
+server.listen(port, () => {
+    console.log(`Server is listening on http://localhost:${port}`);
+});
+```
+## AUTOEVALUACIÓN 🪼🫧
+
+
