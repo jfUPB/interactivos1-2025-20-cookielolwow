@@ -968,3 +968,92 @@ server.listen(port, () => {
 ## AUTOEVALUACIÓN 🪼🫧
 
 
+**Nota propuesta:** 5.0
+
+Justificación general
+
+Considero que mi desempeño en esta unidad merece la nota máxima porque realicé TODAS las actividades propuestas, documenté paso a paso cada proceso con evidencias en la bitácora, respondí las preguntas de reflexión con ejemplos propios, realicé modificaciones creativas al código y logré aplicar los conceptos vistos (cliente-servidor, HTTP, Socket.IO, p5.js, etc.) en un proyecto funcional.
+
+**Actividad 01**
+
+ **Defensa de la nota:**
+
+- Ejecuté los comandos npm install y npm start, documentando qué ocurrió en la terminal y su propósito.
+
+- Expliqué lo que mostraban las páginas page1 y page2 al abrirlas.
+
+- Mostré los mensajes que aparecieron tanto en la terminal del servidor como en el navegador.
+
+- Analicé cómo se sincronizaban los círculos al mover las ventanas.
+
+**Evidencias:** capturas de terminal, descripciones de comportamiento visual y análisis de los resultados bien bacanos :) .
+
+
+**Actividad 02**
+
+ **Defensa de la nota:**
+
+- Reflexioné sobre mi forma de conectarme a Internet y qué pasaría si se corta el acceso.
+
+- Identifiqué ejemplos de cliente-servidor en la vida diaria (restaurante, biblioteca).
+
+- Analicé la URL de un sitio web y expliqué sus componentes.
+
+- Comparé HTTP con protocolos seriales usados antes, mostrando similitudes y diferencias.
+
+- Identifiqué las partes de un formulario entre HTML, CSS y JavaScript.
+
+- Comparé el bucle draw() con el modelo basado en eventos.
+
+- Reflexioné sobre las ventajas de usar JavaScript tanto en cliente como en servidor.
+
+- Expliqué la diferencia entre HTTP tradicional y WebSockets.
+
+  
+**Evidencias:** textos de reflexión, ejemplos propios, comparaciones bien bacanas :) .
+
+
+
+**Actividad 03** *
+
+ **Defensa de la nota:**
+
+- Modifiqué rutas en el servidor (/page1 a /pagina_uno) y comprobé cómo las URLs se asocian con respuestas.
+
+- Probé la conexión de distintos usuarios y observé IDs en la terminal.
+
+- Probé qué ocurre al desconectarse un usuario.
+
+- Experimenté con socket.emit vs socket.broadcast.emit y expliqué la diferencia.
+
+- Cambié el puerto y comprobé el funcionamiento.
+  
+**Evidencias:** capturas de terminal, registro de IDs, descripciones del resultado de cada prueba bien bacanos :) .
+
+
+
+**Actividad 04** 
+
+ **Defensa de la nota:**
+
+- Verifiqué errores en consola cuando se detuvo el servidor.
+
+- Experimenté comentando líneas de código para analizar la comunicación.
+
+- Usé console.log para comprobar qué datos se enviaban entre pestañas.
+
+- Analicé la función checkWindowPosition() y concluí por qué se optimiza al detectar cambios reales.
+
+- Realicé modificaciones creativas al código, como cambiar el background() según la distancia de las ventanas y agregar mi propia idea.
+  
+**Evidencias:** pruebas en consola, modificaciones de código documentadas y reflexión sobre el diseño eficiente bien bacana :) .
+
+**Actividad 05***
+
+ **Defensa de la nota:**
+
+- Diseñé y expliqué una idea creativa de visualización con ondas que simulan un océano y cascadas cuando las ventanas se separan.
+- Documenté todos los archivos (server, page1, page2, scripts JS).
+
+**Evidencias:** código completo del proyecto, explicación de la idea, bocetos y pruebas visuales.
+
