@@ -290,6 +290,8 @@ Mueve la ventana de page2 un poco para que envíe una actualización.
 <img width="1029" height="325" alt="image" src="https://github.com/user-attachments/assets/01bf9b7f-336d-4202-b6d9-258a1d31053d" />
 
  - Al comentar esa linea se corto la comunicación.
+
+   
 **🪼🫧 Experimenta**
 
 
@@ -346,6 +348,11 @@ Inventa otra modificación creativa.
 
 Explica tu idea y realiza algunos bocetos.
 - Quiero que la aplicación sea de unas ondas que imiten el movimiento de las olas y que cuando las dos pestañas se separen se simule una "cascada"  hacia la separación.
+
+ Algo asi 
+
+ <img width="962" height="470" alt="image" src="https://github.com/user-attachments/assets/246c2666-6ba6-47bf-a9df-e8203130a710" />
+  Para hacerlo ...
   <img width="952" height="604" alt="image" src="https://github.com/user-attachments/assets/9cf1f4be-8f68-42d1-97bd-7c42a9a15061" />
 
 Incluye todos los códigos (servidor y clientes) en tu bitácora.
@@ -1056,5 +1063,6 @@ Considero que mi desempeño en esta unidad merece la nota máxima porque realic�
 - Documenté todos los archivos (server, page1, page2, scripts JS).
 
 **Evidencias:** código completo del proyecto, explicación de la idea, bocetos y pruebas visuales.
+
 
 
