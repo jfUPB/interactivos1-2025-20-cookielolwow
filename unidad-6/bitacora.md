@@ -347,12 +347,30 @@ Inventa otra modificación creativa.
 **🪼🫧 En tu bitácora**
 
 Explica tu idea y realiza algunos bocetos.
-- Quiero que la aplicación sea de unas ondas que imiten el movimiento de las olas y que cuando las dos pestañas se separen se simule una "cascada"  hacia la separación.
+- Mi idea para esta actividad es que se simulen unas olas que se mueven como el mar, y que cuando yo separe las dos pestañas, aparezca una especie de “cascada” toda bacana en el hueco entre ambas. La gracia es que las olas viajan normalmente de un lado a otro, pero si hay un espacio, ps cae agua justo en la mitad, así como si se rompiera el océano. Quería que se sintiera como un océano  entre dos ventanas, pero que como tenia que ser interactivo hice que si separabas las olas ps pasara lo de la cascada. 
 
- Algo asi 
+  
+ Lo primero que pensé fue cómo se vería. Me lo imaginé algo así:
 
  <img width="962" height="470" alt="image" src="https://github.com/user-attachments/assets/246c2666-6ba6-47bf-a9df-e8203130a710" />
-  Para hacerlo ...
+
+ 
+  Para hacerlo me mie encima. Primero tenía que armar todo el tema del servidor con socket.io, porque obviamente si quería que las ventanas hablaran entre sí, necesitaba esa comunicación en tiempo real. ásicamente el server es el que manda la información  clave: la posición de las ventanas, si están pegadas o no, y la variable noiseOffset que hace que las olas se muevan con ruido Perlin y no se vean todas robóticas.
+
+
+  Luego me puse con las ventanas. Cada una dibuja sus olas como normales, pero con la condición de que si hay un espacio en la mitad, entonces cambie el comportamiento y se active la cascada.
+
+
+  Ya de ahi me re perdi pq como se hacia la detección de que las pestañas estaban separadas. Al inicio no tenía ni idea, hasta que caí en cuenta de que podía usar las coordenadas de cada ventana: screenX y width. O sea, si la ventana 1 termina antes     de donde empieza la 2, significa que hay un gap. O sea super cool 10/10.
+
+  Después venía lo de la cascada.  La cascada la hice con particulitas azules, cada partícula es como una gotica de agua que se genera justo en el borde de la ola y empieza a caer con gravedad. Tienen una vida finita y ps van regenrandose, asi se mantiene el efecto de caida.
+
+
+  La parte que más me enredó fue la sincronización de las olas entre las dos pestañas. Si no lo hacía, cada ventana iba a mostrar olas distintas y las olas estarian a niveles de altura diferente. La solución fue que el servidor mandara el syncUpdate con el noiseOffset cada frame. Eso asegura que las dos ventanas estén siempre dibujando la misma ola, y cuando las pego parecen un solo mar gigante y las ventanas van agarraditas para que en ningun momento las olas esten desniveladas.
+  
+ Y quedo asi de cool 🤪
+
+ 
   <img width="952" height="604" alt="image" src="https://github.com/user-attachments/assets/9cf1f4be-8f68-42d1-97bd-7c42a9a15061" />
 
 Incluye todos los códigos (servidor y clientes) en tu bitácora.
@@ -985,7 +1003,7 @@ Considero que mi desempeño en esta unidad merece la nota máxima porque realic�
 
  **Defensa de la nota:**
 
-- Ejecuté los comandos npm install y npm start, documentando qué ocurrió en la terminal y su propósito.
+- Ejecuté los comandos npm install y npm start, documentando en la bitacora lo que veia que ocurria en la terminal y su propósito.
 
 - Expliqué lo que mostraban las páginas page1 y page2 al abrirlas.
 
@@ -1000,9 +1018,9 @@ Considero que mi desempeño en esta unidad merece la nota máxima porque realic�
 
  **Defensa de la nota:**
 
-- Reflexioné sobre mi forma de conectarme a Internet y qué pasaría si se corta el acceso.
+- Reflexioné.
 
-- Identifiqué ejemplos de cliente-servidor en la vida diaria (restaurante, biblioteca).
+- Pensé y encontre ejemplos de cliente-servidor en la vida diaria .
 
 - Analicé la URL de un sitio web y expliqué sus componentes.
 
@@ -1063,6 +1081,7 @@ Considero que mi desempeño en esta unidad merece la nota máxima porque realic�
 - Documenté todos los archivos (server, page1, page2, scripts JS).
 
 **Evidencias:** código completo del proyecto, explicación de la idea, bocetos y pruebas visuales.
+
 
 
 
