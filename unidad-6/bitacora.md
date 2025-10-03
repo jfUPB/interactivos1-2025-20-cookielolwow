@@ -1003,13 +1003,7 @@ Considero que mi desempeño en esta unidad merece la nota máxima porque realic�
 
  **Defensa de la nota:**
 
-- Ejecuté los comandos npm install y npm start, documentando en la bitacora lo que veia que ocurria en la terminal y su propósito.
-
-- Expliqué lo que mostraban las páginas page1 y page2 al abrirlas.
-
-- Mostré los mensajes que aparecieron tanto en la terminal del servidor como en el navegador.
-
-- Analicé cómo se sincronizaban los círculos al mover las ventanas.
+Ejecuté los comandos npm install y npm start, dejando en la bitácora lo que iba pasando en la terminal y para qué servía cada cosa. Después expliqué qué mostraban las páginas page1 y page2 al abrirlas y registré los mensajes que aparecían tanto en la terminal del servidor como en el navegador. También analicé cómo se sincronizaban los círculos cuando movía las ventanas.
 
 **Evidencias:** capturas de terminal, descripciones de comportamiento visual y análisis de los resultados bien bacanos :) .
 
@@ -1017,22 +1011,7 @@ Considero que mi desempeño en esta unidad merece la nota máxima porque realic�
 **Actividad 02**
 
  **Defensa de la nota:**
-
-- Reflexioné.
-
-- Pensé y encontre ejemplos de cliente-servidor en la vida diaria .
-
-- Analicé la URL de un sitio web y expliqué sus componentes.
-
-- Comparé HTTP con protocolos seriales usados antes, mostrando similitudes y diferencias.
-
-- Identifiqué las partes de un formulario entre HTML, CSS y JavaScript.
-
-- Comparé el bucle draw() con el modelo basado en eventos.
-
-- Reflexioné sobre las ventajas de usar JavaScript tanto en cliente como en servidor.
-
-- Expliqué la diferencia entre HTTP tradicional y WebSockets.
+Reflexioné sobre varios temas y hasta encontré ejemplos de cliente-servidor en la vida diaria. Analicé la URL de un sitio web explicando sus componentes y comparé HTTP con protocolos seriales antiguos, viendo similitudes y diferencias. También identifiqué las partes de un formulario desde HTML, CSS y JavaScript, y comparé el bucle draw() con el modelo basado en eventos. Además, pensé en las ventajas de usar JavaScript tanto en cliente como en servidor y expliqué la diferencia entre el HTTP tradicional y los WebSockets.
 
   
 **Evidencias:** textos de reflexión, ejemplos propios, comparaciones bien bacanas :) .
@@ -1043,15 +1022,7 @@ Considero que mi desempeño en esta unidad merece la nota máxima porque realic�
 
  **Defensa de la nota:**
 
-- Modifiqué rutas en el servidor (/page1 a /pagina_uno) y comprobé cómo las URLs se asocian con respuestas.
-
-- Probé la conexión de distintos usuarios y observé IDs en la terminal.
-
-- Probé qué ocurre al desconectarse un usuario.
-
-- Experimenté con socket.emit vs socket.broadcast.emit y expliqué la diferencia.
-
-- Cambié el puerto y comprobé el funcionamiento.
+Modifiqué las rutas en el servidor (por ejemplo de /page1 a /pagina_uno) para ver cómo se asociaban las URLs con las respuestas. También probé la conexión de distintos usuarios y revisé los IDs que aparecían en la terminal, además de mirar qué pasaba cuando alguien se desconectaba. Experimenté con socket.emit y socket.broadcast.emit, entendiendo bien la diferencia entre ambos, y hasta cambié el puerto para comprobar que todo siguiera funcionando
   
 **Evidencias:** capturas de terminal, registro de IDs, descripciones del resultado de cada prueba bien bacanos :) .
 
@@ -1060,16 +1031,8 @@ Considero que mi desempeño en esta unidad merece la nota máxima porque realic�
 **Actividad 04** 
 
  **Defensa de la nota:**
-
-- Verifiqué errores en consola cuando se detuvo el servidor.
-
-- Experimenté comentando líneas de código para analizar la comunicación.
-
-- Usé console.log para comprobar qué datos se enviaban entre pestañas.
-
-- Analicé la función checkWindowPosition() y concluí por qué se optimiza al detectar cambios reales.
-
-- Realicé modificaciones creativas al código, como cambiar el background() según la distancia de las ventanas y agregar mi propia idea.
+ 
+Verifiqué los errores que aparecían en consola cuando el servidor se detenía y también fui probando a comentar líneas de código para entender mejor cómo se estaba dando la comunicación. Usé varios console.log para revisar qué datos se estaban enviando entre pestañas y me puse a analizar la función checkWindowPosition(), donde entendí que se optimiza porque solo detecta los cambios reales. Además, hice mis propias modificaciones creativas al código, como cambiar el background() según la distancia entre ventanas y meterle una idea mía para darle un toque más personal.
   
 **Evidencias:** pruebas en consola, modificaciones de código documentadas y reflexión sobre el diseño eficiente bien bacana :) .
 
@@ -1077,10 +1040,12 @@ Considero que mi desempeño en esta unidad merece la nota máxima porque realic�
 
  **Defensa de la nota:**
 
-- Diseñé y expliqué una idea creativa de visualización con ondas que simulan un océano y cascadas cuando las ventanas se separan.
+- Hice una aplicación super cool de olas interactiva.
+- Hice el bocetico y los pasos que implemente.
 - Documenté todos los archivos (server, page1, page2, scripts JS).
 
 **Evidencias:** código completo del proyecto, explicación de la idea, bocetos y pruebas visuales.
+
 
 
 
