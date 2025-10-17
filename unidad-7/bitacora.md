@@ -4,7 +4,7 @@
 
 ## Actividad 01
 
-**🧐🧪✍️ Reporta en tu bitácora**
+**🎃🐱 Reporta en tu bitácora**
 
 
 1. ¿Qué URL de Dev Tunnels obtuviste? ¿Por qué crees que necesitamos usar esta URL en lugar de http://localhost:3000 o la IP local de tu computador para que el celular se conecte?
@@ -31,7 +31,7 @@
     - Sí, la interacción funcionó bien. Cuando movía el dedo en el celular, las visuales en el escritorio reaccionaban casi al instante, así que se notaba que la conexión entre ambos estaba activa.
     - Solo se notaba una ligera latencia, pero poquito, qn sabe si fue mi pc pq es una porqueria  :) . 
 ## Actividad 02
-**🧐🧪✍️ Reporta en tu bitácora**
+**🎃🐱 Reporta en tu bitácora**
 
 
 Explica con tus propias palabras: ¿Por qué es necesario Dev Tunnels en este escenario y cómo funciona conceptualmente?
@@ -56,7 +56,7 @@ Coloca en tu bitácora capturas de pantalla del sistema completo funcionando. Es
 
 
 ## Actividad 03
-
+**🎃🐱 Reporta en tu bitácora**
 1. ¿Cuál es la función principal de express.static(‘public’) en este servidor? ¿Cómo se compara con el uso de app.get(‘/ruta’, …) del servidor de la Unidad 6?
   - Esa línea le dice al servidor que todo lo que esté dentro de la carpeta public se pueda abrir directamente desde el navegador.
 2. Explica detalladamente el flujo de un mensaje táctil: ¿Qué evento lo envía desde el móvil? ¿Qué evento lo recibe el servidor? ¿Qué hace el servidor con él? ¿Qué evento lo envía el servidor al escritorio? ¿Por qué se usa socket.broadcast.emit en lugar de io.emit o socket.emit en este caso?
@@ -91,7 +91,7 @@ Si conectaras dos computadores de escritorio y un móvil a este servidor, y movi
   - Los console.log sirven para ver lo que está pasando en tiempo real.
 ## Actividad 04
 
-## APPLY
+## APPLY🎃🐱 
 
 Q RETO TAN HORRIBLEEEKJDFNWKDNFPWEHFWEFJEWFJBW
 
@@ -386,5 +386,6 @@ Actividad 05
 
 
     - Documenté todos los archivos
+
 
 
