@@ -102,6 +102,12 @@ ME ESTA PASANDO ESTO:
 <img width="345" height="333" alt="image" src="https://github.com/user-attachments/assets/1b1be96c-942a-4860-91da-9b8445a9390b" />
 
 
+Me inspire en:
+
+
+<img height="229px" src="https://media2.giphy.com/media/v1.Y2lkPWZjZGU1NDk1Y3lvN2puOGdwYmQ5eXN6Zjd3M3N1eDc3cWxsYW5mMHI5MHYwdjBwMyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/W8krmZSDxPIfm/giphy.gif" width="400px" itemtype="http://schema.skype.com/Giphy" key="gif_0">
+
+
 quiero hacer la simulacion de un mini rave con gatos saltando asi bien hallowen, com si fuera una fiesta de hallowen, con muchas flashing lights asi bien loko. Y que los gatos desaparecieran cuando las luces se apagaran para simular una habitacion.
 
 
@@ -344,3 +350,40 @@ class Cat {
 </html>
 
 ```
+AUTOEVALUACIÓN 🪼🫧
+Nota propuesta: 4.0
+
+Justificación general
+
+Considero que mi desempeño en esta unidad merece la nota máxima porque realicé TODAS las actividades propuestas.
+
+
+Actividad 02
+
+Hice todo :)
+
+Evidencias: textos de reflexión.
+
+Actividad 03
+
+- Defensa de la nota:
+
+    - Hice todo :)
+
+Actividad 04
+- no lo hice 
+
+
+Actividad 05
+
+- Defensa de la nota:
+
+
+    - Hice una aplicación super cool de gatos lokos.
+
+
+    - Expliqué los pasos que implemente.
+
+
+    - Documenté todos los archivos
+
