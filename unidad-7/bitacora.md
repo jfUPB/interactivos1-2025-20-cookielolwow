@@ -123,7 +123,7 @@ Y por el lado del móvil, hice que aparecieran unos controles para cambiar los c
 
 
 
-dea fue probar todo junto: el audio, los saltos, las luces, y que todo respondiera bien entre el celular y el escritorio. Cuando por fin lo vi funcionando con la canción y los gatos brincando, fue una locura total
+al  probar todo junto: el audio, los saltos, las luces, y que todo respondiera bien entre el celular y el escritorio. Cuando por fin lo vi funcionando con la canción y los gatos brincando, fue lokura total-
 
 **INDEX DESKTOP**
 ```html
@@ -386,4 +386,5 @@ Actividad 05
 
 
     - Documenté todos los archivos
+
 
