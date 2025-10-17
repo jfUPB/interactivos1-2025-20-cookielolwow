@@ -100,3 +100,247 @@ ME ESTA PASANDO ESTO:
 
 
 <img width="345" height="333" alt="image" src="https://github.com/user-attachments/assets/1b1be96c-942a-4860-91da-9b8445a9390b" />
+
+
+quiero hacer la simulacion de un mini rave con gatos saltando asi bien hallowen, com si fuera una fiesta de hallowen, con muchas flashing lights asi bien loko. Y que los gatos desaparecieran cuando las luces se apagaran para simular una habitacion.
+
+
+Usando de base el proyecto que estabamos trabajando en clase.  En el sketch del compu puse el código para que los gatos saltaran al ritmo de la canción. Como el tema tiene 162 BPM, eso da como 2.7 saltos por segundo, así que usé eso para sincronizar el movimiento. Cada gato es una imagen PNG que se mueve para arriba y abajo al ritmo.
+
+
+Y por el lado del móvil, hice que aparecieran unos controles para cambiar los colores de las luces o apagarlas. Cuando las luces se apagan, los gatos se dejan de ver, como si el lugar quedara oscuro. Cuando las prendes, vuelve toda la locura de colores.
+
+
+
+<img width="1910" height="891" alt="image" src="https://github.com/user-attachments/assets/768e1539-7a60-413e-87df-5c333ebbbe91" />
+
+
+
+
+dea fue probar todo junto: el audio, los saltos, las luces, y que todo respondiera bien entre el celular y el escritorio. Cuando por fin lo vi funcionando con la canción y los gatos brincando, fue una locura total
+
+**INDEX DESKTOP**
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cat Rave Desktop</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.11.0/lib/p5.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.11.0/lib/addons/p5.sound.min.js"></script>
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+  <script src="sketch.js" defer></script>
+
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: black;
+    }
+  </style>
+</head>
+<body></body>
+</html>
+
+```
+**SKETCH DESKTOP**
+```js
+let cats = [];
+let fft, song;
+let audioStarted = false;
+
+let socket;
+let lightsOn = true;
+let colorShift = 0;
+let bpm = 162;
+let beatInterval;
+let lastBeat = 0;
+let jumpScale = 0;
+let catImages = [];
+
+function preload() {
+  soundFormats('mp3', 'ogg');
+  song = loadSound('SceneHalloween.mp3');
+
+ 
+  for (let i = 1; i <= 5; i++) {
+    catImages.push(loadImage(`cat${i}.png`));
+  }
+}
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  imageMode(CENTER);
+  fft = new p5.FFT();
+
+
+  for (let i = 0; i < 50; i++) {
+    cats.push(new Cat(random(width), random(height - 100), random(catImages)));
+  }
+
+  beatInterval = (60 / bpm) * 1000;
+
+  socket = io();
+  socket.on("connect", () => console.log("Conectado al servidor"));
+
+
+  socket.on("message", (data) => {
+    if (data.type === "lightControl") {
+      lightsOn = data.state;
+    } else if (data.type === "colorShift") {
+      colorShift = random(255);
+    }
+  });
+}
+
+function draw() {
+
+  if (lightsOn) {
+    let r = sin(frameCount * 0.1) * 127 + 128;
+    let g = sin(frameCount * 0.15 + colorShift) * 127 + 128;
+    let b = sin(frameCount * 0.2 + colorShift * 2) * 127 + 128;
+    background(r, g, b);
+  } else {
+    background(0);
+  }
+
+  if (!audioStarted) {
+    drawStartScreen();
+    return;
+  }
+
+  let spectrum = fft.analyze();
+  let bass = fft.getEnergy('bass');
+
+ 
+  if (millis() - lastBeat > beatInterval) {
+    jumpScale = map(bass, 0, 255, 0.5, 1.3);
+    for (let c of cats) c.jump();
+    lastBeat = millis();
+  }
+
+ 
+  if (lightsOn) {
+    for (let c of cats) {
+      c.update();
+      c.display(jumpScale);
+    }
+  }
+}
+
+function drawStartScreen() {
+  background(0);
+  fill(255);
+  textAlign(CENTER, CENTER);
+  textSize(32);
+  text(" TOCA PARA EMPEZAR EL RAVE DE GATOS ", width / 2, height / 2);
+}
+
+function mousePressed() {
+  if (!audioStarted) {
+    userStartAudio();
+    song.loop();
+    audioStarted = true;
+  }
+}
+
+class Cat {
+  constructor(x, y, img) {
+    this.x = x;
+    this.y = y;
+    this.baseY = y;
+    this.img = img;
+    this.velY = 0;
+    this.isJumping = false;
+    this.size = random(100, 180);
+  }
+
+  jump() {
+    if (!this.isJumping) {
+      this.velY = -random(8, 14);
+      this.isJumping = true;
+    }
+  }
+
+  update() {
+    if (this.isJumping) {
+      this.y += this.velY;
+      this.velY += 0.9; 
+      if (this.y >= this.baseY) {
+        this.y = this.baseY;
+        this.isJumping = false;
+      }
+    }
+  }
+
+  display(scaleFactor) {
+    push();
+    translate(this.x, this.y);
+    scale(scaleFactor);
+    image(this.img, 0, 0, this.size, this.size);
+    pop();
+  }
+}
+
+```
+**INDEX MOBILE**
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cat Rave Controller</title>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.11.0/lib/p5.min.js"></script>
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+  <script src="sketch.js" defer></script>
+
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: black;
+      color: white;
+      font-family: sans-serif;
+      text-align: center;
+    }
+  </style>
+</head>
+<body></body>
+</html>
+
+```
+
+**SKETCH MOBILE**
+```js
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cat Rave Controller</title>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.11.0/lib/p5.min.js"></script>
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+  <script src="sketch.js" defer></script>
+
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: black;
+      color: white;
+      font-family: sans-serif;
+      text-align: center;
+    }
+  </style>
+</head>
+<body></body>
+</html>
+
+```
