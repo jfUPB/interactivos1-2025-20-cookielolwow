@@ -15,7 +15,7 @@
 
 - La canción que voy a usar es [Scene halloween](https://youtu.be/unDEgaQFgs8?si=OTH_nJTRK2Ychvoq)
 2. Define el concepto de las visuales que quieres crear.
-- Continuando con la tematica del Rave de gatos, voy a crear 4 salas mas de animales en fiesta. Una sala de perros, otra de medusas otra de peces , otra de hamsters Y una combinada.
+- Continuando con la tematica del Rave de gatos, voy a crear 4 salas mas de animales en fiesta. Una sala de perros, otra de peces , otra de hamsters Y una combinada.
 3. Explica cómo el móvil y el micro:bit controlarán las visuales.
 - En el celular se podran manejar las luces de la fiesta ayeee. Y desde el microbit con a y b podras cambiar entre salas.
 4. Haz un bocetos de todas las interfaces del sistema.
@@ -337,6 +337,7 @@ class Animal {
 
 ```
 **micro:bit.**
+
 
 
 
