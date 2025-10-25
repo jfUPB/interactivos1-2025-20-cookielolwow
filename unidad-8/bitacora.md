@@ -7,20 +7,21 @@
 **🐡🪸 Reporta en tu bitácora**
 
 1. Documenta los referentes visuales que te inspiren.
-- Voy a tomar inspiracion de "Newark Museum of Art with its immersive and interactive exhibit, Sketch Aquarium: Connected World."
-<img width="640" height="350.5" alt="image" src="https://github.com/user-attachments/assets/be61fbc2-ebac-400d-b1dd-ba35d53aaf16" />
+<img width="225" height="225" alt="image" src="https://github.com/user-attachments/assets/f3e14949-b0ba-406b-9e58-5b9bd9eb6711" />
 
-<img width="640" height="350.5" alt="image" src="https://github.com/user-attachments/assets/f64bbfd7-57ac-4d03-bfc3-b75aa5de3266" />
+<img width="220" height="210" alt="image" src="https://github.com/user-attachments/assets/e850c671-b7c2-4c98-a2be-798bfa50207b" />
+<img width="228" height="221" alt="image" src="https://github.com/user-attachments/assets/ce3b3c56-9e05-467c-ab0c-e3ee2a50e481" />
+<img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/d2be2b5d-b724-4860-beed-f547ae8c90aa" />
 
-
-- La canción que voy a usar es [Kingston Town](https://youtu.be/8Ikz-51w3mo?si=begnF9pLrgpJR0Jx)
+- La canción que voy a usar es [Scene halloween](https://youtu.be/unDEgaQFgs8?si=OTH_nJTRK2Ychvoq)
 2. Define el concepto de las visuales que quieres crear.
-- Quiero crear una playa asi bien bonita.  Voy a dibujar como las bases de los animales q van a estar en la playa, la idea es q sean como animales q actuen como humanos ( un pescado caminando en la playa, medusas tomando e sol, etc) y que sobre ellos se pueda dibujar :). Voy a ver si logro hacer visualmente la simulación del mar y la playa con palmeras y todo eso.
+- Continuando con la tematica del Rave de gatos, voy a crear 3 salas mas de animales en fiesta. Una sala de perros, otra de medusas otra de peces y otra de hamsters.
 3. Explica cómo el móvil y el micro:bit controlarán las visuales.
-- En el celular se podra diseñar el animalito que vas a mandar a la playa y con el micro:bit seleccionar a cualquier animal que quieras de la pantalla y manejarlo.
+- En el celular se podran manejar las luces de la fiesta ayeee. Y desde el microbit con a y b podras cambiar entre salas.
 4. Haz un bocetos de todas las interfaces del sistema.
+  
 5. Haz un diagrama que explique cómo se comunicarán los diferentes componentes del sistema.
-
+- Me niego a hacer diagramas 
 
 ## Apply: Aplicación 🛠
 ### Actividad 02
@@ -29,6 +30,7 @@
 
 Documenta todo el proceso de construcción.
 Incluye todos los códigos: servidor, cliente móvil, cliente de escritorio y micro:bit.
+
 
 
 
