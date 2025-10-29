@@ -53,6 +53,25 @@ Después ajusté la parte del audio para que empezara con un clic (por el bloque
 2. Incluye todos los códigos:
 **servidor**
 ```js
+const { SerialPort } = require('serialport');
+const { ReadlineParser } = require('@serialport/parser-readline');
+
+
+const portMicrobit = new SerialPort({ path: 'COM4', baudRate: 115200 });
+const parser = portMicrobit.pipe(new ReadlineParser({ delimiter: '\n' }));
+
+parser.on('data', (data) => {
+    const button = data.trim();
+    console.log("Micro:bit envió:", button);
+
+    if (button === 'A') {
+        io.emit('message', { type: 'microbitButton', button: 'A' });
+    }
+    if (button === 'B') {
+        io.emit('message', { type: 'microbitButton', button: 'B' });
+    }
+});
+
 const express = require('express');
 const http = require('http');
 const socketIO = require('socket.io');
@@ -338,6 +357,21 @@ class Animal {
 ```
 **micro:bit.**
 
+```
+from microbit import *
+import bluetooth
+import uart
+
+uart.init(baudrate=115200)
+
+while True:
+    if button_a.was_pressed():
+        uart.write("A\n")
+    if button_b.was_pressed():
+        uart.write("B\n")
+    sleep(100)
+
+```
 
 
 
