@@ -17,7 +17,7 @@
 2. Define el concepto de las visuales que quieres crear.
 - Continuando con la tematica del Rave de gatos, voy a crear 4 salas mas de animales en fiesta. Una sala de perros, otra de peces , otra de hamsters Y una combinada.
 3. Explica cómo el móvil y el micro:bit controlarán las visuales.
-- En el celular se podran manejar las luces de la fiesta ayeee. Y desde el microbit con a y b podras cambiar entre salas.
+- En el celular se podran manejar las luces de la fiesta ayeee, si presionas la pantalla se enciende pero apenas dejes de hacerlo se van a apagar las luces. Y desde el microbit con a y b podras cambiar entre salas, con b pasas a la siguiente salsa y con a te devuelves.
 4. Haz un bocetos de todas las interfaces del sistema.
 
 - La idea es que asi se vean las salas nuevas.
@@ -30,7 +30,10 @@
   <img width="326" height="530" alt="image" src="https://github.com/user-attachments/assets/5f38acfd-6706-4ea1-86d8-a85b7c97f8a8" />
 
 5. Haz un diagrama que explique cómo se comunicarán los diferentes componentes del sistema.
-- Me niego a hacer diagramas 
+
+   
+<img width="937" height="657" alt="image" src="https://github.com/user-attachments/assets/67203271-3f3b-4b61-853d-46d6060b5754" />
+ 
 
 ## Apply: Aplicación 🛠
 ### Actividad 02
@@ -39,7 +42,9 @@
 
 **RESULTADOOOOO**
 
-1. 
+**PREVIEW DEL VIDEO**
+
+
 ![Vídeo sin título ‐ Hecho con Clipchamp](https://github.com/user-attachments/assets/49172829-0cf0-46cc-8bfa-c0083590a3e1)
 
 
@@ -374,8 +379,18 @@ while True:
 ```
 
 
+### Autoevaluacion:
 
 
+A pesar de que no pude ir a clase y seguramente me pongan 0
+
+
+<img width="235" height="242" alt="image" src="https://github.com/user-attachments/assets/51aa91db-e9af-436d-98cb-d13107507bcd" />
+
+Digo q mi nota es de un 5 porque complete todas las actividades de forma creativa y implemente todo el programa. Programé el servidor en Node.js con Socket.IO para permitir la comunicación en tiempo real entre los clientes y el micro:bit. Creé el sketch del celular en p5.js para controlar las luces y la interacción táctil, y el del escritorio para mostrar las animaciones, las salas y la sincronización con la música mediante análisis FFT.
+
+
+<img width="234" height="215" alt="image" src="https://github.com/user-attachments/assets/dd63a66a-939e-457b-a2bf-d7df2ebf602f" />
 
 
 
